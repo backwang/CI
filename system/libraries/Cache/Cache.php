@@ -27,7 +27,7 @@
 class CI_Cache extends CI_Driver_Library {
 	
 	protected $valid_drivers 	= array(
-		'cache_apc', 'cache_file', 'cache_memcached', 'cache_dummy'
+		'cache_apc', 'cache_file', 'cache_memcached', 'cache_dummy','cache_redis'
 	);
 
 	protected $_cache_path		= NULL;		// Path of cache files (if file-based cache)
@@ -146,9 +146,9 @@ class CI_Cache extends CI_Driver_Library {
 	{        
 		$default_config = array(
 				'adapter',
-				'memcached'
+				'memcached',
+			    'redis'
 			);
-
 		foreach ($default_config as $key)
 		{
 			if (isset($config[$key]))

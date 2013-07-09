@@ -17,6 +17,15 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+	 function __construct()
+    {
+         parent::__construct();
+         //$this->load->library('ArrayList');   
+         //$this->load->model('blog_model');//加载博客系统后台数据处理模型
+         $this->load->driver('cache');//这个是加载memcached
+         //$this->load->library('myredis');//这个是自定义的一个memcached与数据库访问自动切换的库
+         
+    }
 	public function index()
 	{
 
